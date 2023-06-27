@@ -9,4 +9,3 @@ def remove_odd_nums(arr):
 remove_odd_nums(nums)
 
 gg = ['www', 123, 'tutuutut', 124]
-
