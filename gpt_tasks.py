@@ -1,36 +1,37 @@
-# # def reverse_key_and_value(cars):
-# #     reversed_items = {value: key for key, value in cars.items()}
-# #     print(reversed_items)
+# def reverse_key_and_value(cars):
+#     reversed_items = {value: key for key, value in cars.items()}
+#     print(reversed_items)
 
 
-# # cars = {
-# #     'ferrari': 150,
-# #     'maserati': 100,
-# #     'lamborghini': 200
-# # }
+# cars = {
+#     'ferrari': 150,
+#     'maserati': 100,
+#     'lamborghini': 200
+# }
 
-# # reverse_key_and_value(cars)
-
-
-# # x = {
-# #     'a': 1,
-# #     'b': '2',
-# #     'c': 'hello'
-# # }
-
-# # z = {
-# #     'd': '4',
-# #     'e': 3,
-# #     'f': 'world'
-# # }
-
-# # a = {
-# #     'g': 5,
-# #     'h': '!!!',
-# #     'i': 6
-# # }
+# reverse_key_and_value(cars)
 
 
+# x = {
+#     'a': 1,
+#     'b': '2',
+#     'c': 'hello'
+# }
+
+# z = {
+#     'd': '4',
+#     'e': 3,
+#     'f': 'world'
+# }
+
+# a = {
+#     'g': 5,
+#     'h': '!!!',
+#     'i': 6
+# }
+
+
+import antigravity
 import timeit
 big_dict = {
     'a': 1,
@@ -53,92 +54,92 @@ big_dict = {
 }
 
 
-# # def remove_all_beside_string(big_dict: dict) -> dict:
-# #     rr = {val for val in big_dict.values() if type(
-# #         val) == str and not val.isnumeric()}
-# #     print(rr)
+# def remove_all_beside_string(big_dict: dict) -> dict:
+#     rr = {val for val in big_dict.values() if type(
+#         val) == str and not val.isnumeric()}
+#     print(rr)
 
 
-# # remove_all_beside_string(big_dict)
+# remove_all_beside_string(big_dict)
 
 
-# # def test(*arr):
-# #     qq = 0
-# #     # for dict in arr:
-# #     #     for key in dict.values():
-# #     #         if str(key).isnumeric():
-# #     #             qq += int(key)
-# #     qq = sum(int(key) for dict in arr for key in dict.values() if str(key).isnumeric())
+# def test(*arr):
+#     qq = 0
+#     # for dict in arr:
+#     #     for key in dict.values():
+#     #         if str(key).isnumeric():
+#     #             qq += int(key)
+#     qq = sum(int(key) for dict in arr for key in dict.values() if str(key).isnumeric())
 
-# #     print(qq)
-
-
-# # test(x, z, a)
+#     print(qq)
 
 
-# dic1 = {
-#     'a': 1,
-#     'b': '2',
-#     'c': 'hello',
-#     'p': 'pre'
-# }
-
-# dic2 = {
-#     'd': '4',
-#     'e': 3,
-#     'f': 'world',
-#     'a': 1,
-#     'b': '2',
-# }
+# test(x, z, a)
 
 
-# def take_duplicates(x, z):
-#     # total = {}
-#     # for key, val in x.items():
-#     #     for key2, val2 in z.items():
-#     #         if key == key2 and val == val2:
-#     #             total.update({key: val})
+dic1 = {
+    'a': 1,
+    'b': '2',
+    'c': 'hello',
+    'p': 'pre'
+}
 
-#     total = {key: val for key, val in x.items()
-#              for key2, val2 in z.items() if key == key2 and val == val2}
+dic2 = {
+    'd': '4',
+    'e': 3,
+    'f': 'world',
+    'a': 1,
+    'b': '2',
+}
 
-#     print(total)
 
+def take_duplicates(x, z):
+    # total = {}
+    # for key, val in x.items():
+    #     for key2, val2 in z.items():
+    #         if key == key2 and val == val2:
+    #             total.update({key: val})
 
-# # take_duplicates(dic1, dic2)
+    total = {key: val for key, val in x.items()
+             for key2, val2 in z.items() if key == key2 and val == val2}
 
-
-# def take_duplicates(x, z):
-#     total = {}
-#     # for key, val in x.items():
-#     #     if key not in z.keys():
-#     #         total.update({key: val})
-
-#     total = {key: val for key, val in x.items() if key not in z.keys()}
-
-#     print(total)
+    print(total)
 
 
 # take_duplicates(dic1, dic2)
 
 
-# def remove_a(x):
-#     qq = {key: val for key, val in x.items() if 'a' not in key}
-#     print(qq)
-#     # print(x.keys())
+def take_duplicates(x, z):
+    total = {}
+    # for key, val in x.items():
+    #     if key not in z.keys():
+    #         total.update({key: val})
+
+    total = {key: val for key, val in x.items() if key not in z.keys()}
+
+    print(total)
 
 
-# remove_a(big_dict)
-
-# import antigravity
-# print(antigravity)
+take_duplicates(dic1, dic2)
 
 
-# def sum(a, b, c):
-#     s = (a + b) * c /2
-#     return s
+def remove_a(x):
+    qq = {key: val for key, val in x.items() if 'a' not in key}
+    print(qq)
+    # print(x.keys())
 
-# print(sum(1, 10, 5))
+
+remove_a(big_dict)
+
+print(antigravity)
+
+
+def sum(a, b, c):
+    s = (a + b) * c / 2
+    return s
+
+
+print(sum(1, 10, 5))
 
 
 print(timeit.timeit('sum(range(100000))', number=10000))
