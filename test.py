@@ -1,49 +1,40 @@
-# gg = [21, 22, 56, 0]
 
-# def even_num(gg):
-#     print(f"all nums are even: {all(gg)}")
+class Cat:
 
-# even_num(gg)
+    __slots__ = ('_name', '_age')
 
+    def __init__(self, name, age) -> None:
 
-# def chr(num):
-#     print(chr(num))
+        self.name = name
+        self.age = age
 
-# chr(12)
+    @property
+    def name(self):
+        return self._name
 
-# def print_ascii_chars(num):
-#     for i in range(num):
-#         if i >= 32 and i <= 126:
-#             print(chr(i), end=' ')
+    @name.setter
+    def name(self, value):
+        if not value:
+            raise AttributeError('name cannot be empty!')
+        self._name = value
 
-# print_ascii_chars(38)
+    @property
+    def age(self):
+        return self._age
 
+    @age.setter
+    def age(self, value):
+        if value < 1 or value > 15:
+            raise AttributeError('age should be between 1-15')
+        self._age = value
 
-a = [1, 2, 3]
-b = [1, 2, 3]
-
-print(a is b)
-
-
-# ========================================
-
-
-my_car = {
-    'brand': 'BMW',
-    'price': 12000
-}
-
-print('brand' in my_car)
-print('brand' not in my_car)
+    def __repr__(self) -> str:
+        return f'Cat: {self.name}, age: {self.age}'
 
 
-# ========================================
+tom = Cat("Tom", 2)
 
-
-set1 = {1, 3, 5, 0}
-set2 = {1, 3, 5, 0}
-print(set1 == set2)
-print(set1 is set2)
-print(5 in set2)
-print(5 not in set2)
-
+if __name__ == '__main__':
+    tom.name1 = 'qwe'
+    tom.age = 6
+    print(tom)
