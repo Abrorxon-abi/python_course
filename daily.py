@@ -38,6 +38,8 @@ class User(AbstractUserClass):
         return ''
         # ex:
         # user1("test1", "test2", "test3")  => This is call fn from __call__
+        
+    
 
     def __add__(self, other):
         return "This user has $" + str(other.budget)
@@ -80,6 +82,8 @@ class Client(User):
     def __repr__(self) -> str:
         return f'{self.name} {self.surname} has ${self.budget} budget.'
 
+    
+
     def get_info(self):
         print(f'{self.name} {self.surname} has ${self.budget} budget.')
         return ''
@@ -90,6 +94,12 @@ class Client(User):
 
 
 if __name__ == '__main__':
+    qwe = User('qwe', 'eqw')
+    print(qwe.get_info())
+    print(User.get_info())
+    
+    print(User.info())
+    print(User.is_adult(15))
     identity = input("Who are you? ")
     cls = AbstractUserClass
     if identity == 'client':

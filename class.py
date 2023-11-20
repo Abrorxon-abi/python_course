@@ -16,6 +16,10 @@ class BlueCat:
     @classmethod
     def increment_count(cls):
         cls.counter += 1
+        
+    @classmethod
+    def qwe(cls):
+        pass
 
 
 if __name__ == '__main__':
